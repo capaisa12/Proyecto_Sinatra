@@ -1,0 +1,37 @@
+<% tareas = Tarea.all %>
+<div class="container">
+  <h2>Tareas Pendientes</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tarea</th>
+        <th>Fecha de Creacion</th>
+        <th>Estado</th>
+        <th colspan="2" style="text-align: center;">Acción</th>
+      </tr>
+    </thead>
+      <% tareas.each do |t| %>
+      <% if (t["done"]==false) %>
+      <tr>
+        <td><%= t["id"] %></td>
+        <td><%= t["title"] %></td>
+        <td><%= t["created_at"] %></td>
+        <td><h5 style="color:#F3750C">Tarea Pendiente</h5></td>
+        <td><% if (t["done"]==false) %>
+          <form class="" action="/completar_pendiente" method="post">
+            <button onclick="pulsar()" type="submit" class="btn-info" name="id" value="<%=t["id"]%>">Completar</button> <% end %>
+            <script languaje<SCRIPT languaje="JavaScript">
+            function pulsar() {
+              alert("La tarea fue marcada como terminada");
+              }
+            </script>
+          </form></td>
+          <td>
+          <form class="" action="/borrar_pendientes" method="post">
+            <button onclick="return confirm('Esta seguro de eliminar esta tarea');" type="submit" class="btn-danger" name="id" value="<%=t["id"]%>">Eliminar</button>
+          </form></td>
+      </tr><% end %><% end %>
+    </table>
+</div>

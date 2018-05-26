@@ -1,0 +1,28 @@
+<% tareas = Tarea.all %>
+<div class="container">
+  <h2> Tareas Terminadas </h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Tarea</th>
+        <th>Fecha de Creacion</th>
+        <th>Estado</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+      <% tareas.each do |t| %>
+      <% if (t["done"]==true) %>
+      <tr>
+        <td><%= t["id"] %></td>
+        <td><%= t["title"] %></td>
+        <td><%= t["created_at"] %></td>
+        <td><h5 style="color:#1FC817">Tarea Terminada</h6></td>
+          <td>
+          <form class="" action="/borrar_terminadas" method="post">
+            <button onclick="return confirm('Esta seguro de eliminar esta tarea');" type="submit" class="btn-danger" name="id" value="<%=t["id"]%>">Eliminar</button>
+          </form></td>
+      </tr><% end %><% end %>
+    </table>
+</div>

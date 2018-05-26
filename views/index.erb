@@ -1,0 +1,39 @@
+<% tareas = Tarea.all %>
+<div class="container">
+  <h2>Presentación</h2>
+  <div class="panel panel-default">
+    <div class="panel-heading">Organizador de Tareas "Multitareas"</div>
+      <div class="panel-body">En esta aplicación usted podra llevar un control de sus tareas, creandolas, verificando cuales se encuentran pendientes y cuales ha completado</div>
+  </div>
+  <h2>Funciones</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Crear tareas</div>
+            <div class="panel-body">Con esta funcion usted podra agregar un tarea en la app, expecificando el titulo de la misma<br/><a href="/new">Crear</a></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-info">
+          <div class="panel-heading">Listar todas las tareas</div>
+            <div class="panel-body">Con esta funcion usted podra listar todas las tareas ingresadas en la app. adicional podra eliminar o cambiar de estado a "Terminada" aquellas tareas que asi considere.<a href="/Listado_tareas">Listar Todas las Tareas</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-success">
+          <div class="panel-heading">Listar tareas terminadas</div>
+            <div class="panel-body">Con esta funcion usted podra listar todas las tareas terminadas. adicional podra eliminar aquellas tareas que asi considere.<br/><a href="/completas">Listar Tareas Terminadas</a></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-danger">
+          <div class="panel-heading">Listar tareas pendientes</div>
+            <div class="panel-body">Con esta funcion usted podra listar todas las tareas pendientes por terminar. adicional podra eliminar o cambiar de estado a "Terminada" aquellas tareas que asi considere.<a href="/pendientes">Listar Tareas Pendientes</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
